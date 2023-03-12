@@ -6,9 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resumo JS</title>
     <style>
+        #box {
+            padding: 2px;
+            background-color: rgb(209, 207, 207);
+        }
         body {
             font-family: Arial, Helvetica, sans-serif;
             background-image: linear-gradient(to right, rgb(4, 4, 32), rgb(34, 34, 160));
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid black;
+            padding: 5px 7px 5px 7px;
+            text-align: center;
         }
 
         section > div.ex01:hover {
@@ -27,6 +40,11 @@
             background-color: white;
         }
         section > div.ex04:hover {
+            transition: 1s;
+            transform: scale(1.2);
+            background-color: white;
+        }
+        section > div.ex05:hover {
             transition: 1s;
             transform: scale(1.2);
             background-color: white;
@@ -54,7 +72,7 @@
         }
         section {
             border: 1px solid rgb(255, 255, 255);
-            width: 500px;
+            width: 550px;
             margin: auto;
             border-radius: 15px;
             background-color: white;
@@ -65,6 +83,7 @@
         }
         p {
             padding: 0px 10px 0px 30px;
+            text-align: justify;
         }
     </style>
 </head>
@@ -178,6 +197,300 @@
                 <strong>Pode também trocar o 'BRL' para outros formatos, como 'USD', 'EUR'</strong>
             </p>
         </div>
+        <div class="ex05">
+            <h3>Operador de atribuição</h3>
+            <p>Atribuir significa jogar um valor ou o resultado de uma expressão para dentro de uma variável.</p>
+            <ol>
+                <li>let n1 = 4</li>
+                <li>let n2 = 8</li>
+                <li>let n3 = n1 + n2</li>
+            </ol>
+                <p>As três linhas acima possuem o mesmo operador de atribuição, que é o símbolo de =.</p>
+            <div id="box">
+                <p>
+                    <strong>E O SINAL DE IGUAL?</strong> Você pode estar se perguntando: se apenas um sinal = significa "recebe", como vamos representar o operador de "igual"? A resposta é simples: Em javaScript é simples: Em JavaScript, o "igual" é representado como == (igualdade) ou como === (igualdade restrita)
+                </p>
+            </div>
+        </div>
+
+        <h3>Operadores Aritméticos</h3>
+        <p>Os operadores desse tipo servem para fazer as contas básicas que estamos acostumados no nosso dia-a-dia.</p>
+        <table>
+            <tr>
+                <th colspan="5">Ordem de precedência</th>
+            </tr>
+            <tr>
+                <th rowspan="10"><img src="https://w7.pngwing.com/pngs/235/140/png-transparent-arrow-arrow-angle-rectangle-heart.png" alt="" width="20px"></th>
+                <th>Operador</th>
+                <th>Função</th>
+                <th>Exemplo</th>
+                <th>Resultado</th>
+            </tr>
+            <tr>
+                <td>(  )</td>
+                <td>Agrupamento</td>
+                <td>(5+3) / 2</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>+</td>
+                <td>Positivo unário</td>
+                <td>+5</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Negativo inário</td>
+                <td>-4</td>
+                <td>-4</td>
+            </tr>
+            <tr>
+                <td>**</td>
+                <td>Exponenciação</td>
+                <td>5 ** 2</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>Multiplicação</td>
+                <td>3 * 2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>/</td>
+                <td>Divisão</td>
+                <td>10 / 2</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>Resto da divisão</td>
+                <td>5 % 2</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>+</td>
+                <td>Adição binária</td>
+                <td>5 + 3</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Subtração Binária</td>
+                <td>8 - 5</td>
+                <td>3</td>
+            </tr>
+
+        </table>
+        <p>O primeiro operador (Agrupamento) não é exatamente um "operador aritmético", mas adicionei aqui na lista para efeitos práticos. Usamos muito eles para forçar a execução de uma operação antes de outra. No exemplo que demos, se resolvermos 5 + 3 / 2 o resultado será 6.5, já que em uma expressão aritmética com soma binária e divisão, resolvemos primeiro a divisão. Chamamos isso de <strong>ordem de precedência</strong>.</p>
+        <p>
+            Como você já deve ter percebido, essa tal de "ordem de precedência" indica quais operadores serão executados primeiro. Nem tudo é resolvido na ordem em que aparece na expressão. Os que estão acima são mais poderosos. Nos lugares onde aparecem o símbolo [ os operadores possuem a mesma ordem e são poderosos da mesma maneira, sendo assim devem ser resolvidos da esquerda para a direita. Sempre que você se deparar com uma expressão aritmética, consulte a tabela acima.
+        </p>
+        <p>
+            Vejamos um exemplo, comparando a expressão 5+3/2 com a expressão (5+3)/2.
+        </p>
+        <div style="text-align: center;">
+            <img src="imagens/ScreenShot_20230312140238.png" alt="">
+            <img src="imagens/ScreenShot_20230312140248.png" alt="">
+        </div>
+        <h3>Operadores de Atribuição (parte 2)</h3>
+        <table>
+            <tr>
+                <th>Operador</th>
+                <th>Exemplo</th>
+                <th>Equivale a...</th>
+            </tr>
+            <tr>
+                <td>+=</td>
+                <td>a += b</td>
+                <td>a = a + b</td>
+            </tr>
+            <tr>
+                <td>-=</td>
+                <td>a -= b</td>
+                <td>a = a - b</td>
+            </tr>
+            <tr>
+                <td>*=</td>
+                <td>a *= b</td>
+                <td>a = a * b</td>
+            </tr>
+            <tr>
+                <td>/=</td>
+                <td>a /= b</td>
+                <td>a = a / b</td>
+            </tr>
+            <tr>
+                <td>**=</td>
+                <td>a **= b</td>
+                <td>a = a ** b</td>
+            </tr>
+            <tr>
+                <td>%=</td>
+                <td>a %= b</td>
+                <td>a = a % b</td>
+            </tr>
+        </table>
+        <h3>Operadores de incremento / decremento</h3>
+        <p>
+            Incremento (Somar uma unidade a uma variável) <br>
+            Decremento (Diminuir uma unidade a uma variável).
+        </p>
+        <table>
+            <tr>
+                <th>Operador</th>
+                <th>Exemplo</th>
+                <th>Equivale a...</th>
+                <th>Poderia usar</th>
+            </tr>
+            <tr>
+                <td>++</td>
+                <td>x++</td>
+                <td>x = x + 1</td>
+                <td>x += 1</td>
+            </tr>
+            <tr>
+                <td>--</td>
+                <td>x--</td>
+                <td>x = x - 1</td>
+                <td>x -= 1</td>
+            </tr>
+        </table>
+        <p>Dica: use o exemplo acima desta forma:</p>
+        <p>++x</p>
+        <p>--x</p>
+        <p>pois assim a página carregará o operador lógico antes da variável x</p>
+        <h3>Operadores de comparação</h3>
+        <p>Um operador de comparação compara seus operandos e retorna um valor lógico baseado em se a comparação é verdadeira. Os operandos podem ser numéricos, strings, lógicos ou objetos. Strings são comparadas com base em ordenação lexográfica utilizando valores Unicode. Na maioria dos casos, se dois operandos não são do mesmo tipo, o JavaScript tenta convertê-los para um tipo apropriado. Isto geralmente resulta na realização de uma comparação numérica. As únicas exceções a esta regra são os operadores === e o !==, que realizam comparações de igualdade e desigualdade "estritas". Estes operadores não tentam converter os operandos em tipos compatíveis antes de verificar a igualdade. A tabela a seguir descreve os operadores de comparação levando em conta o seguinte código:</p>
+        <p>
+            var var1 = 3 <br>
+            var var2 = 4
+        </p>
+        <table>
+            <tr>
+                <th>Operador</th>
+                <th>Descrição</th>
+                <th>Exemplos que retornam verdadeiro</th>
+            </tr>
+            <tr>
+                <td>Igual (==)</td>
+                <td>Retorna verdadeiro caso os operadores sejam iguais</td>
+                <td>3 == var1 <br>
+                    "3" == var1 <br>
+                    3 == '3'</td>
+            </tr>
+            <tr>
+                <td>Nãi igual (!=)</td>
+                <td>Retorna verdadeiro caso os operandos não sejam iguais</td>
+                <td>var1 != 4 <br>
+                    var2 != "3"</td>
+            </tr>
+            <tr>
+                <td>Estritamente igual (===)</td>
+                <td>Retorna verdadeiro caso os operandos sejam iguais e do mesmo tipo.</td>
+                <td>3 === var1</td>
+            </tr>
+            <tr>
+                <td>Estritamente não igual (!==)</td>
+                <td>Retorna verdadeiro caso os operandos não sejam iguais e/ou não sejam do mesmo tipo.</td>
+                <td>var1 !== "3" <br>
+                    3 !== '3'</td>
+            </tr>
+            <tr>
+                <td>Maior que (>)</td>
+                <td>Retorna verdadeiro caso o operando da esquerda seja maior que o da direita.</td>
+                <td>var2 > var1 "12" > 2</td>
+            </tr>
+            <tr>
+                <td>Maior que ou igual (>=)</td>
+                <td>Retorna verdadeiro caso o operando da esquerda seja maior ou igual ao da direita.</td>
+                <td>var2 >= var1 var1 >= 3</td>
+            </tr>
+            <tr>
+                <td>Menor que (<)</td>
+                <td>Retorna verdadeiro caso o operando da esquerda seja menor que o da direita.</td>
+                <td>var1 < var2 "12" < "2"</td>
+            </tr>
+            <tr>
+                <td>Menor que ou igual (<=)</td>
+                <td>Retorna verdadeiro caso o operando da esquerda seja menor ou igual ao da direita.</td>
+                <td>var1 <= var2 var2 <= 5</td>
+            </tr>
+        </table>
+        <h3>Operadores lógicos</h3>
+        <p>
+            Operadores lógicos são utilizados tipicamente com valores booleanos (lógicos); neste caso, retornam um valor booleano. Entretanto, os operadores && e || na verdade retornam o valor de um dos operandos especificados, de forma que se esses operadores forem utilizados com valores não-booleanos, eles possam retornar um valor não-booleano. Os operadores lógicos são descritos na seguinte tabela.
+        </p>
+        <table>
+            <tr>
+                <th>Operador</th>
+                <th>Utilização</th>
+                <th>Descrição</th>
+            </tr>
+            <tr>
+                <td>AND lógico (&&)</td>
+                <td>expr1 && expr2</td>
+                <td>(E lógico) - Retorna expr1 caso possa ser convertido para falso; senão, retorna expr2. Assim, quando utilizado com valores booleanos, && retorna verdadeiro caso ambos operandos sejam verdadeiros; caso contrário, retorna falso.</td>
+            </tr>
+            <tr>
+                <td>OU lógico (||)</td>
+                <td>expr1 || expr2</td>
+                <td>(OU lógico) - Retorna expr1 caso possa ser convertido para verdadeiro; senão, retorna expr2. Assim, quando utilizado com valores booleanos, || retorna verdadeiro caso ambos os operandos sejam verdadeiro; se ambos forem falsos, retorna falso.</td>
+            </tr>
+            <tr>
+                <td>NOT lógico (!)</td>
+                <td>!expr</td>
+                <td>(Negação lógica) Retorna falso caso o único operando possa ser convertido para verdadeiro; senão, retorna verdadeiro.</td>
+            </tr>
+        </table>
+        <p>
+            Exemplos de expressões que podem ser convertidas para falso são aquelas que são avaliados como nulo, 0, string vazia ("") ou undefined. <br>
+            <br>
+            O código a seguir mostra exemplos do operador && (E lógico). <br>
+        </p>
+        <div id="box">
+            <p style="font-size: 1.1em;">
+                var a1 =  true && true;     // t && t retorna true <br>
+                var a2 =  true && false;    // t && f retorna false <br>
+                var a3 = false && true;     // f && t retorna false <br>
+                var a4 = false && (3 == 4); // f && f retorna false <br>
+                var a5 = "Gato" && "Cão";   // t && t retorna Cão <br>
+                var a6 = false && "Gato";   // f && t retorna false <br>
+                var a7 = "Gato" && false;   // t && f retorna false <br>
+                </p>
+        </div>
+        <p>O código a seguir mostra exemplos do operador || (OU lógico).</p>
+        <div id="box">
+            <p style="font-size: 1.1em;">
+                var o1 =  true || true;     // t || t retorna true <br>
+                var o2 = false || true;     // f || t retorna true  <br>
+                var o3 =  true || false;    // t || f retorna true <br>
+                var o4 = false || (3 == 4); // f || f retorna false <br>
+                var o5 = "Gato" || "Cão";   // t || t retorna Gato <br>
+                var o6 = false || "Gato";   // f || t retorna Gato <br>
+                var o7 = "Gato" || false;   // t || f retorna Gato <br>
+
+                </p>
+        </div>
+        <p>O código a seguir mostra exemplos do operador ! (negação lógica).</p>
+        <div id="box">
+            <p style="font-size: 1.1em;">
+                var n1 = !true;   // !t retorna false <br>
+                var n2 = !false;  // !f retorna true <br>
+                var n3 = !"Gato"; // !t retorna false <br>
+                </p>
+        </div>
+        <h3>Operador ternário</h3>
+        <p>O operador condicional é o único operador JavaScript que utiliza três operandos. O operador pode ter um de dois valores baseados em uma condição. A sintaxe é:</p>
+        <p><strong>condicao ? valor1 : valor2</strong></p>
+        <p>Se condicao for verdadeira, o operador terá o valor de valor1. Caso contrário, terá o valor de valor2. Você pode utilizar o operador condicional em qualquer lugar onde utilizaria um operador padrão.</p>
+        <p>Por exemplo,</p>
+        <div id="box">
+            <p>
+                var status = (idade >= 18) ? "adulto" : "menor de idade";
+            </p>
+        </div>
+        <p>Esta declaração atribui o valor "adulto" à variável status caso idade seja dezoito ou mais. Caso contrário, atribui o valor "menor de idade".</p>
     </section>
 </body>
 </html>
