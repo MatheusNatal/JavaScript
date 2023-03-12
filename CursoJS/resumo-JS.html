@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JS</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, rgb(4, 4, 32), rgb(34, 34, 160));
+        }
+
+        section > div.ex01:hover {
+            transition: 1s;
+            transform: scale(1.2);
+            background-color: white;
+        }
+        section > div.ex02:hover {
+            transition: 1s;
+            transform: scale(1.2);
+            background-color: white;
+        }
+        section > div.ex03:hover {
+            transition: 1s;
+            transform: scale(1.2);
+            background-color: white;
+        }
+        section > div.ex04:hover {
+            transition: 1s;
+            transform: scale(1.2);
+            background-color: white;
+        }
+        section > div {
+            transition: 1s;
+            padding-bottom: 10px;
+
+        }
+        h1 {
+            padding: 5px;
+            margin: 2px;
+            text-align: center;
+        }
+        h2 {
+            padding: 5px 0px;
+            background-color: aqua;
+            color: white;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        h3 {
+            padding: 20px 0px 2px 0px;
+            margin: 2px;
+        }
+        section {
+            border: 1px solid rgb(255, 255, 255);
+            width: 500px;
+            margin: auto;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 3px 4px 7px rgba(255, 255, 255, 0.397);
+        }
+        h2, h3, p {
+            padding-left: 10px;
+        }
+        p {
+            padding: 0px 10px 0px 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <section>
+        <h1>Resumo da matéria de JavaScript</h1>
+        <div class="ex01">
+            <h2>Ex 01</h2>
+            <h3>Comandos para abrir uma janela de mensagem no navegador</h3>
+            <p>
+                window.alert('Teste') <br>
+                <br>
+                window.confirm('Está gostando de JS?') <br>
+                <br>
+                window.prompt('Qual é seu nome?') <br>
+            </p>
+        </div>
+        <div class="ex02">
+            <h2>Ex 02</h2>
+            <h3>Definindo variáveis</h3>
+            <p>
+                var nome = window.prompt('Qual é seu nome?') <br>
+                <br>
+                window.alert('É um prazer te conhecer, ' + nome + '!')
+            </p>
+        </div>
+        <div class="ex03">
+            <h2>Ex 03</h2>
+            <h3>Operações matemáticas utilizando variáveis</h3>
+            <p>
+                var n1 = Number.parseFloat(window.prompt('Digite um número: ')) <br>
+                <br>
+                var n2 = Number.parseFloat(window.prompt('Digite outro número: ')) <br>
+                <br>
+                var soma = n1 + n2 <br>
+                <br>
+                window.alert(`A soma entre os dois números é : ${soma}`)
+            </p>
+            <h3>Converter número para string</h3>
+            <ul>
+                <li>parseFloat: converte a variável para um número float</li>
+                <li>${variavel} - Interpolação, mostra determinada variável na frase sem precisar concatenar.</li>
+            </ul>
+            <h3>Exemplo de concatenação</h3>
+            <p>
+                var nome = 'Matheus' <br>
+                <br>
+                var idade = 24 <br>
+                <br>
+                var nota = 8.5 <br>
+                Resultado: <br>
+                'O aluno ' + nome + 'tem ' + idade + 'anos e tirou a nota ' + nota'
+            </p>
+            <h3>Exemplo de interpolação</h3>
+            <p>
+                var nome = 'Matheus' <br>
+                <br>
+                var idade = 24 <br>
+                <br>
+                var nota = 8.5 <br>
+                Resultado: <br>
+                `O aluno ${nome} tem ${idade} anos e tirou a nota ${nota}`
+            </p>
+        </div>
+        <div class="ex04">
+            <h2>Ex 04</h2>
+            <h3>Trabalhando com inputs de usuário</h3>
+            <p>
+                var nome = window.prompt('Qual é o seu nome?') <br>
+                <br>
+                <strong>A linha acima abre uma janela no navegador para o usuário digita algo.</strong> <br>
+                <br>
+                document.write(`Olá, <strong>${nome}!</strong> Seu nome tem ${nome.length} letras.`) <br>
+                <br>
+                <strong>A linha acima responde a janela anterior, saudando o usuário com o nome que ele colocou.</strong> <br>
+                <br>
+                document.write(`Seu nome em maiúsculas fica: ${nome.toUpperCase()})` <br>
+                <br>
+                <strong>A linha acima coloca a variável {nome} em maiúscula.</strong> <br>
+                <br>
+                document.write(`Seu nome em minúsculas fica: ${nome.toLowerCase()}`) <br>
+                <br>
+                <strong>A linha acima coloca a variável {nome} em minúscula.</strong> <br>
+            </p>
+            <h3>Trabalhando com números</h3>
+            <p>
+                var n1 = 1501.5 <br>
+                <br>
+                n1.fixed(2) <br>
+                Resultado: <br>
+                '1501.50' <br>
+                <br>
+                A linha "n1.fixed(2)"
+                coloca 2 casas decimais após o ponto <br>
+                <br>
+                <strong>Por padrão, na programação, o "." é equivalente a "," </strong><br>
+                <br>
+                n1.toFixed(2).replace('.', ',') <br>
+                Resultado: <br>
+                '1501,50' <br>
+                <br>
+                A linha "n1.toFixed(2).replace('.', ',')" converte todo "." para "," e vice-versa.
+            </p>
+            <h3>Transformando número para formato de salário.</h3>
+            <p>
+                n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) <br>
+                Resultado: <br>
+                'R$1.501,50' <br>
+                <br>
+                <strong>Pode também trocar o 'BRL' para outros formatos, como 'USD', 'EUR'</strong>
+            </p>
+        </div>
+    </section>
+</body>
+</html>
