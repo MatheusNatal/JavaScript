@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trabalhando com condicionais</title>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    <p>Velocidade permitida = 60Km/h</p>
+    <input type="number" name="velocidade" id="velocidade">
+    <input type="button" value="calcular" id="calcular" onclick="executar()">
+
+    <div id="res">
+
+    </div>
+
+    <script>
+        
+        function executar() {
+            valor_multa = 160
+
+            var velocidade_permitida = 60
+
+            var velocidade = document.getElementById('velocidade')
+
+            var v = Number(velocidade.value)
+
+            var velocidade_ultrapassada = v - velocidade_permitida
+
+            var res = window.document.getElementById('res')
+            if(v > 60) {
+                res.innerHTML = `<p>Você foi multado em ${valor_multa.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} por ultrapassar ${velocidade_ultrapassada}Km/h da velocidade permitida</p>`
+            } else {
+                res.innerHTML = '<p>Velocidade permitida</p>'
+            }
+        }
+    </script>
+</body>
+</html>

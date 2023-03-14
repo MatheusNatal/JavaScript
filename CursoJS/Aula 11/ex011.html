@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <input type="text" name="país" id="país">
+    <input type="button" value="calcular" id="calcular" onclick="executar()">
+
+    <div id="res">
+
+    </div>
+
+    <script>
+        function executar() {
+            var descobrir_país = document.getElementById('país').value; // obtém o valor do input
+            var resposta = document.getElementById('res');
+            
+            if (descobrir_país === 'Brasil') { // use === para comparação
+                resposta.innerHTML = `Vivendo em ${descobrir_país}, você é: Brasileiro`;
+            } else {
+                resposta.innerHTML = `Vivendo em ${descobrir_país}, você é: Estrangeiro`;
+            }
+        }
+    </script>
+</body>
+</html>
